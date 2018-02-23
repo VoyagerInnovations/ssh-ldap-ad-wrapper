@@ -15,7 +15,7 @@ import (
 
 )
 
-var ldap_config_file = "ssh-ldap-ad.conf"
+var ldap_config_file = "/etc/ssh-ldap-ad.conf"
 var uname = os.Args[1]
 
 func main() {
