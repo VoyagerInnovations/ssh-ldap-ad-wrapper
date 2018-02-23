@@ -28,6 +28,7 @@ func main() {
                 var pass string
                 var base_search string
                 var pubkey_property string
+                var server_rootca string
                 var uname = os.Args[1]
 
 
@@ -82,6 +83,12 @@ func main() {
                                         pubkey_property = s[1]
                                         continue 
                                 }
+                                
+                                if (strings.HasPrefix(scanner.Text(), "server_rootca")) {
+                                        s := strings.Split(scanner.Text(), " ") 
+                                        pubkey_property = s[1]
+                                        continue 
+                                }
 
                         }
         }
@@ -92,7 +99,7 @@ func main() {
 
                 //Load CA Cert
 
-                cert, err := ioutil.ReadFile("server.crt")
+                cert, err := ioutil.ReadFile(server_rootca)
                 if err != nil {
                         log.Fatalf("Couldn't load file", err)
                 }
