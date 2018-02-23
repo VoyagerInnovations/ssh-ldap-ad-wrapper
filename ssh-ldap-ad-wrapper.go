@@ -19,18 +19,19 @@ var ldap_config_file = "/etc/ssh-ldap-ad.conf"
 
 func main() {
 
-        var uri string
-        var hostname string
-        var port int64
-        var user string
-        var pass string
-        var base_search string
-        var pubkey_property string
         if len(os.Args) > 1  {
-                var uname = os.Args[1]
-        }
+        
+                var uri string
+                var hostname string
+                var port int64
+                var user string
+                var pass string
+                var base_search string
+                var pubkey_property string
+                if len(os.Args) > 1  {
+                        var uname = os.Args[1]
+                }
 
-        if len(os.Args) > 1  {
 
                 file, err := os.Open(ldap_config_file)
                 if err != nil {
