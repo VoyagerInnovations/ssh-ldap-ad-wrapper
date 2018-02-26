@@ -86,7 +86,7 @@ func main() {
                                 
                                 if (strings.HasPrefix(scanner.Text(), "server_rootca")) {
                                         s := strings.Split(scanner.Text(), " ") 
-                                        pubkey_property = s[1]
+                                        server_rootca = s[1]
                                         continue 
                                 }
 
